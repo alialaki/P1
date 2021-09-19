@@ -98,7 +98,7 @@ def depthFirstSearch(problem):
             Visited.append(currentNode)
             if problem.isGoalState(currentNode):
                 return actions
-            for succNext, succAction, succCost in problem.getSuccessors(currentNode):
+            for succNext, succAction, succCost in problem.getSuccessors(currentNode) - Visited:
                     fringe.push((succNext, actions + [succAction], succCost))
 
 def breadthFirstSearch(problem):
